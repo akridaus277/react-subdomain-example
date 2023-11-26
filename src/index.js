@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {MainApp, SubApp} from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { getApp } from './utils/helpers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const CurrentApp = getApp();
+console.log({CurrentApp});
 root.render(
+  
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <CurrentApp />
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 
