@@ -2,15 +2,22 @@ import axios from "axios";
 import React from "react";
 import { BrowserRouter, Link, Route, Routes} from "react-router-dom";
 
-const baseURL = "http://tirtaamanda.localhost:8000/api/user";
+const baseURL = "https://apikondangin.snapind.com/tirtaamanda/api/user";
 
 export default function Dashboard() {
     const [post, setPost] = React.useState(null);
 
     React.useEffect(() => {
       axios.get(baseURL, {
+        
         headers: {
-          'Authorization': 'Bearer 1|OgmFa7P4MeiAekMArmDYDRTziy20jmpl0NTEoX44'
+          'Content-Type':'application/json',
+          'Authorization': 'Bearer 79|BSgMjHFWLMmwrmWEqHWF1dDdZHfOET2pvz4CYiG1',
+          'Accept':'application/json',
+          'Access-Control-Allow-Credentials':'true',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS',
+          'Access-Control-Allow-Headers': 'content-type'
       }
       }).then((response) => {
         setPost(response.data);

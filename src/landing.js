@@ -11,12 +11,15 @@ export default function Landing() {
         <h1>ini Landing page</h1>
         <button onClick={()=>{
             window.location.assign(
-                `${
-                    window.location.protocol
-                }//${"tirtamanda."+window.location.host.substring(
-                    window.location.host.indexOf(".") +
-                        1
-                )}/dashboard`
+                window.location.protocol +
+                    "//" +
+                    "tirtaamanda" +
+                    "." +
+                    window.location.hostname +
+                    ":" +
+                    window.location.port +
+                    "/dashboard?token=" +
+                    localStorage.getItem("token")
             );
         }}>klik untuk ke dashboard</button>
     </div>
